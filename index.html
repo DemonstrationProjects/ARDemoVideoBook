@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <script src="./libs/aframe.min.js"></script>
+    <script src="./libs/mindar-image-aframe.prod.js"></script>    
+    <script type="module" crossorigin src="/assets/index-CXBbRhpg.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CxK4ni2N.css">
+  </head>
+
+  <body>
+    <!-- Кнопки UI -->
+    <button id="soundButton">Включить звук</button>
+    <button id="btn1" class="ui-btn">Вариант ответа 1</button>
+    <button id="btn2" class="ui-btn">Вариант ответа 2</button>
+
+    <a-scene
+      mindar-image="imageTargetSrc: targets.mind;"
+      color-space="sRGB"
+      renderer="colorManagement: true, physicallyCorrectLights"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+    >
+      <a-assets>
+        <!-- Moose -->
+        <video id="moose-v1" src="/assets/moose-BsUQlccX.mp4" loop playsinline muted preload="auto"></video>
+        <video id="moose-v2" src="/assets/rabbit-DVCp0eR3.mp4" loop playsinline muted preload="auto"></video>
+
+        <!-- Rabbit -->
+        <video id="rabbit-v1" src="/assets/rabbit-DVCp0eR3.mp4" loop playsinline muted preload="auto"></video>
+        <video id="rabbit-v2" src="/assets/moose-BsUQlccX.mp4" loop playsinline muted preload="auto"></video>
+      </a-assets>
+
+      <a-camera look-controls="enabled: false"></a-camera>
+
+      <!-- Moose -->
+      <a-entity mindar-image-target="targetIndex: 0" class="target">
+        <a-plane
+          class="video-plane"
+          width="1"
+          height="1"
+          visible="false"
+        ></a-plane>
+      </a-entity>
+
+      <!-- Rabbit -->
+      <a-entity mindar-image-target="targetIndex: 1" class="target">
+        <a-plane
+          class="video-plane"
+          width="1"
+          height="1"
+          visible="false"
+        ></a-plane>
+      </a-entity>
+    </a-scene>
+
+  </body>
+</html>
